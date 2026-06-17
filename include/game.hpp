@@ -12,3 +12,16 @@ class Ball{
         void Draw();
         void Update();
 };
+
+class Player{
+    private:
+        int x, y;
+        int width, height;
+        int speed;
+
+    public: 
+        Player(int x, int y, int width, int height, int speed);
+        void Draw();
+        void Update();
+};
+

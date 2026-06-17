@@ -11,13 +11,19 @@ int main(){
     SetTargetFPS(60);
 
     Ball ball(screenWidth/2, screenHeight/2, 10, 7, 7);
+    Player player(screenWidth - 35, screenHeight/2 - 50, 20, 100, 7);
 
     while(!WindowShouldClose()){
         BeginDrawing();
 
+        //Update
         ball.Update();
+        player.Update();
+
+        //Draw
         ClearBackground(BLACK);
         ball.Draw();
+        player.Draw();
 
         EndDrawing();
     }

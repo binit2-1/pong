@@ -24,3 +24,25 @@ void Ball::Update(){
         speed_x *= -1;
    }   
 }
+
+Player::Player(int x, int y, int width, int height, int speed){
+    this->x = x;
+    this->y = y;
+    this->width = width;
+    this->height = height;
+    this->speed = speed;
+}
+
+void Player::Draw(){
+    DrawRectangle(x, y, width, height, WHITE);
+}
+
+void Player::Update(){
+    if(IsKeyDown(KEY_UP) && y > 0){
+        y -= speed;
+    }
+
+    if(IsKeyDown(KEY_DOWN) && y + height < GetScreenHeight()){
+        y += speed;
+    }
+}
