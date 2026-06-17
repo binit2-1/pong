@@ -39,6 +39,8 @@ int main(){
         //Draw
         ClearBackground(BLACK);
 
+        DrawLine(screenWidth/2, 0, screenWidth/2, screenHeight, WHITE);
+        DrawCircleLines(screenWidth/2, screenHeight/2, 70, WHITE);
         DrawText(TextFormat("%i", cpu_score), screenWidth/4, 20, 80, WHITE);
         DrawText(TextFormat("%i", player_score), 3*screenWidth/4, 20, 80, WHITE);
 
