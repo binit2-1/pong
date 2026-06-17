@@ -1,0 +1,18 @@
+# Ignore the entire build directory
+build/
+
+# Ignore compiled binaries (if any exist outside build/)
+*.exe
+*.o
+*.a
+*.so
+
+# Ignore hidden system files
+.DS_Store
+.vscode/
+
+# Ignore local cmake cache
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
