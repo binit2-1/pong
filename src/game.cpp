@@ -38,11 +38,38 @@ void Player::Draw(){
 }
 
 void Player::Update(){
-    if(IsKeyDown(KEY_UP) && y > 0){
+    if(IsKeyDown(KEY_UP)){
         y -= speed;
     }
 
-    if(IsKeyDown(KEY_DOWN) && y + height < GetScreenHeight()){
+    if(IsKeyDown(KEY_DOWN)){
         y += speed;
     }
+
+    LimitMovement();
+}
+
+void Player::LimitMovement(){
+    if(y < 0){
+        y = 0;
+    }
+    if(y + height >= GetScreenHeight()){
+        y = GetScreenHeight() - height;
+    }
+}
+
+Cpu::Cpu(int x, int y, int width, int height, int speed)
+    :Player(x, y, width, height, speed){
+    
+}
+
+void Cpu::Update(int ball_y){
+    if(y+height/2 < ball_y){
+        y += speed;
+    }
+    else if(y+height/2 > ball_y){
+        y -= speed;
+    }
+
+    LimitMovement();
 }
