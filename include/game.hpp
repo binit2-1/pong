@@ -8,7 +8,8 @@ class Ball{
         float speed_x, speed_y;
         Ball(float x, float y, float radius, float speed_x, float speed_y);
         void Draw();
-        void Update();
+        void ResetBall();
+        int Update();
 };
 
 class Player{

@@ -1,6 +1,8 @@
 #include "raylib.h"
 #include "game.hpp"
 
+int player_score = 0;
+int cpu_score = 0;
 
 int main(){
     const int screenHeight = 800;
@@ -18,7 +20,11 @@ int main(){
         BeginDrawing();
 
         //Update
-        ball.Update();
+        int result = ball.Update();
+        
+        if (result == 1) cpu_score++;
+        else if (result == 2) player_score++;
+
         player.Update();
         cpu.Update(ball.y);
 
@@ -32,6 +38,10 @@ int main(){
 
         //Draw
         ClearBackground(BLACK);
+
+        DrawText(TextFormat("%i", cpu_score), screenWidth/4, 20, 80, WHITE);
+        DrawText(TextFormat("%i", player_score), 3*screenWidth/4, 20, 80, WHITE);
+
         ball.Draw();
         player.Draw();
         cpu.Draw();
