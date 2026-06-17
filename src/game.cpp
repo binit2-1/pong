@@ -1,6 +1,6 @@
 #include "game.hpp"
 
-Ball::Ball(int x, int y, int radius, int speed_x, int speed_y){
+Ball::Ball(float x, float y, float radius, float speed_x, float speed_y){
     this->x = x;
     this->y = y;
     this->radius = radius;
@@ -25,7 +25,7 @@ void Ball::Update(){
    }   
 }
 
-Player::Player(int x, int y, int width, int height, int speed){
+Player::Player(float x, float y, float width, float height, float speed){
     this->x = x;
     this->y = y;
     this->width = width;
@@ -58,12 +58,12 @@ void Player::LimitMovement(){
     }
 }
 
-Cpu::Cpu(int x, int y, int width, int height, int speed)
+Cpu::Cpu(float x, float y, float width, float height, float speed)
     :Player(x, y, width, height, speed){
     
 }
 
-void Cpu::Update(int ball_y){
+void Cpu::Update(float ball_y){
     if(y+height/2 < ball_y){
         y += speed;
     }

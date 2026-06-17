@@ -3,22 +3,20 @@
 
 class Ball{
     public:
-        int x, y;
-        int radius;
-        int speed_x, speed_y;
-        Ball(int x, int y, int radius, int speed_x, int speed_y);
+        float x, y;
+        float radius;
+        float speed_x, speed_y;
+        Ball(float x, float y, float radius, float speed_x, float speed_y);
         void Draw();
         void Update();
 };
 
 class Player{
-    protected:
-        int x, y;
-        int width, height;
-        int speed;
-
-    public: 
-        Player(int x, int y, int width, int height, int speed);
+    public:
+        float x, y;
+        float width, height;
+        float speed;
+        Player(float x, float y, float width, float height, float speed);
         void Draw();
         void Update();
         void LimitMovement();
@@ -26,6 +24,6 @@ class Player{
 
 class Cpu:public Player{
     public:
-        Cpu(int x, int y, int width, int height, int speed);
-        void Update(int ball_y);
+        Cpu(float x, float y, float width, float height, float speed);
+        void Update(float ball_y);
 };
